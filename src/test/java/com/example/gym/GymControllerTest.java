@@ -51,7 +51,7 @@ public class GymControllerTest {
         MockMvc.perform(get("/Person/BenchPress/test/test/1/2/02-03-2020/100/5"))
                 .andDo(print())
                 .andExpect(status().isOk())
-                .andExpect(content().string("{\"id\":1,\"imie\":\"test\",\"wiek\":1,\"waga\":1,\"data\":\"2\",\"ciezar\":3.0,\"powtorzenia\":2.0,\"cwiczenie\":\"Bench Press\",\"maksymalny_ciezar\":3.0,\"poziom_sily\":5,\"nazwisko\":\"test\"}"));
+                .andExpect(content().string("{\"id\":1,\"imie\":\"test\",\"wiek\":1,\"waga\":2,\"data\":\"02-03-2020\",\"ciezar\":100.0,\"powtorzenia\":5.0,\"cwiczenie\":\"Bench Press\",\"maksymalny_ciezar\":117.0,\"poziom_sily\":5,\"nazwisko\":\"test\"}"));
 
     }
 
