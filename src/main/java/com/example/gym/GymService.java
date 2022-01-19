@@ -31,12 +31,7 @@ public class GymService {
         Person person = new Person(imie,Nazwisko,wiek,waga,data,ciezar,powtorzenia,"Bench Press",maksymalny_ciezar,poziom_sily);
         return GymRepository.save(person);
     }
-    public Person BenchPress2(String imie, String Nazwisko,int wiek){
 
-
-       Person person = new Person(imie,Nazwisko,wiek,2,"data",2,2,"Bench Press",2,1);
-       return GymRepository.save(person);
-   }
     public Person Deadlift(String imie, String Nazwisko, int wiek, int waga, String data,float ciezar,float powtorzenia){
 
         float maksymalny_ciezar=Math.round(ciezar*(1+(powtorzenia/33)));
@@ -185,6 +180,13 @@ public class GymService {
         Person person = new Person(imie,Nazwisko,wiek,waga,data,ciezar,powtorzenia,cwiczenie,maksymalny_ciezar,poziom_sily);
         return GymRepository.save(person);
     }
+
+     public Person BenchPress2(String imie, String Nazwisko,int wiek){
+
+
+       Person person = new Person(imie,Nazwisko,wiek,2,"data",2,2,"Bench Press",2,1);
+       return GymRepository.save(person);
+   }
     */
 
 }
