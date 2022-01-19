@@ -18,22 +18,20 @@ public class GymService {
 
         System.out.println(person);
     }
-    public Person Person(String imie, String Nazwisko, int wiek, int waga, String data,int ciezar,int powtorzenia,String cwiczenie ){
 
-
-        Person person = new Person(imie,Nazwisko,wiek,waga,data,ciezar,powtorzenia,cwiczenie,12,1);
-        return GymRepository.save(person);
-    }
 
     public Person BenchPress(String imie, String Nazwisko, int wiek, int waga, String data,float ciezar,float powtorzenia){
 
         float maksymalny_ciezar=Math.round(ciezar*(1+(powtorzenia/30)));
+        int poziom_sily=Math.round((ciezar*3)/waga);
+        if(poziom_sily>5){
+            poziom_sily=5;
+        }
 
-        Person person = new Person(imie,Nazwisko,wiek,waga,data,ciezar,powtorzenia,"Bench Press",maksymalny_ciezar,1);
+        Person person = new Person(imie,Nazwisko,wiek,waga,data,ciezar,powtorzenia,"Bench Press",maksymalny_ciezar,poziom_sily);
         return GymRepository.save(person);
     }
     public Person BenchPress2(String imie, String Nazwisko,int wiek){
-
 
 
        Person person = new Person(imie,Nazwisko,wiek,2,"data",2,2,"Bench Press",2,1);
@@ -42,24 +40,36 @@ public class GymService {
     public Person Deadlift(String imie, String Nazwisko, int wiek, int waga, String data,float ciezar,float powtorzenia){
 
         float maksymalny_ciezar=Math.round(ciezar*(1+(powtorzenia/33)));
+        int poziom_sily=Math.round(ciezar*2/waga)-1;
+        if(poziom_sily>5){
+            poziom_sily=5;
+        }
 
-        Person person = new Person(imie,Nazwisko,wiek,waga,data,ciezar,powtorzenia,"Deadlift",maksymalny_ciezar,1);
+        Person person = new Person(imie,Nazwisko,wiek,waga,data,ciezar,powtorzenia,"Deadlift",maksymalny_ciezar,poziom_sily);
         return GymRepository.save(person);
     }
 
     public Person Squat(String imie, String Nazwisko, int wiek, int waga, String data,float ciezar,float powtorzenia){
 
         float maksymalny_ciezar=Math.round(ciezar*(1+(powtorzenia/35)));
+        int poziom_sily=Math.round(ciezar*3/waga);
+        if(poziom_sily>5){
+            poziom_sily=5;
+        }
 
-        Person person = new Person(imie,Nazwisko,wiek,waga,data,ciezar,powtorzenia,"Squat",maksymalny_ciezar,1);
+        Person person = new Person(imie,Nazwisko,wiek,waga,data,ciezar,powtorzenia,"Squat",maksymalny_ciezar,poziom_sily);
         return GymRepository.save(person);
     }
 
     public Person ShoulderPress(String imie, String Nazwisko, int wiek, int waga, String data,float ciezar,float powtorzenia){
 
         float maksymalny_ciezar=Math.round(ciezar*(1+(powtorzenia/32)));
+        int poziom_sily=Math.round(ciezar*5/waga);
+        if(poziom_sily>5){
+            poziom_sily=5;
+        }
 
-        Person person = new Person(imie,Nazwisko,wiek,waga,data,ciezar,powtorzenia,"Shoulder Press",maksymalny_ciezar,1);
+        Person person = new Person(imie,Nazwisko,wiek,waga,data,ciezar,powtorzenia,"Shoulder Press",maksymalny_ciezar,poziom_sily);
         return GymRepository.save(person);
     }
 
